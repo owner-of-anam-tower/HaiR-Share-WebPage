@@ -33,7 +33,8 @@ function colorChangePrefix(text){
 
 function colorChangeDescription(text){
   var text1 = text.replace(/\*\!(.*?)\*\!/g, '<span style="color: #5956FF; font-weight: bold;">$1</span>');
-  var replacedText = text1.replace(/\*\*(.*?)\*\*/g, '<span style="font-weight: bold;">$1</span>');
+  var text2 = text1.replace(/\*\*(.*?)\*\*/g, '<span style="font-weight: bold;">$1</span>');
+  var replacedText = text2.replace("\n", '<br>');
 
   descriptionText.innerHTML = replacedText;
 }
