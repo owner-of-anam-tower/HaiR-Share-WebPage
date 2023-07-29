@@ -2,13 +2,47 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta property="og:image" content="icon/main.PNG">
+		<!-- <meta property="og:image" content="icon/main.PNG"> -->
+		<meta property="og:image" content="" id="ogImage">
 		<meta property="og:title" content="[헤어비] 4032가지의 경우로 나만의 맞춤형 헤어스타일을 추천받고싶다면?">
 		<link rel="stylesheet" type="text/css" href="css/base.css"/>
 		<script src="json/shared-report.json" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/button.js"></script>
+		<script>
+			function getURLParameter(name) {
+		        name = name.replace(/[\[\]]/g, "\\$&");
+		        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+		        var results = regex.exec(window.location.href);
+		        if (!results) return null;
+		        if (!results[2]) return '';
+		        return decodeURIComponent(results[2].replace(/\+/g, " "));
+		    }
+		    var pageValue = getURLParameter("page");
+
+			var splitValues = pageValue.split("-");
+			if (splitValues.length > 1) {
+			    pageValue = splitValues[1];
+			}
+
+			var imageMap = {
+			"OVAL": "icon/oval_ogimage.png",
+			"DIAMOND": "icon/diamond_ogimage.png",
+			"HEART": "icon/heart_ogimage.png",
+			"PEANUT": "icon/peanut_ogimage.png",
+			"ROUND": "icon/round_ogimage.png",
+			"SQUARE": "icon/square_ogimage.png",
+			"TRIANGLE": "icon/triangle_ogimage.png",
+			};
+
+			var imageUrl = imageMap[pageValue];
+
+			if (imageUrl) {
+				var ogImageTag = document.getElementById("ogImage");
+				ogImageTag.setAttribute("content", imageUrl);
+			}
+		</script>
 		<title>HAIRBE</title>
 	</head>
 	<body>
