@@ -8,6 +8,7 @@
 		<script type="text/javascript" src="js/button.js"></script>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta property="og:image" content="icon/base.png">
+		<meta property="og:image" content="icon/main.PNG">
 		<script>
 			function getURLParameter(name) {
 		        name = name.replace(/[\[\]]/g, "\\$&");
@@ -37,8 +38,8 @@
 			var imageUrl = imageMap[pageValue];
 
 			var meta = document.createElement('meta');
-			meta.content = imageUrl;
 			meta.setAttribute("property","og:image");
+			meta.content = imageUrl;
 			document.getElementsByTagName('head')[0].appendChild(meta);
 		</script>
 		<meta property="og:title" content="[헤어비] 4032가지의 경우로 나만의 맞춤형 헤어스타일을 추천받고싶다면?">
