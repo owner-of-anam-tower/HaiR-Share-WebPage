@@ -39,8 +39,8 @@
 			var imageUrl = imageMap[pageValue];
 
 			var meta = document.createElement('meta');
-			meta.property = "og:image";
 			meta.content = imageUrl;
+			meta.setAttribute("property","og:image");
 			document.getElementsByTagName('head')[0].appendChild(meta);
 		</script>
 		<title>HAIRBE</title>
